@@ -29,7 +29,7 @@ Route::get('/',[ListingController::class, 'index']);
 Route::get('/listings/create',[ListingController::class, 'create']);
 
 // Store Listings in database
-Route::get('/listings/{listing}', [ListingController::class, 'show']);
+Route::post('/listings', [ListingController::class, 'store']);
 
 // Single Listing model
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
