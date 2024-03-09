@@ -25,6 +25,11 @@ Route::get('/',[ListingController::class, 'index']);
 //     ]);
 // });
 
+//Show create from
+Route::get('/listings/create',[ListingController::class, 'create']);
+
+// Store Listings in database
+Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
 // Single Listing model
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
