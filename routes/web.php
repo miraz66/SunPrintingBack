@@ -5,6 +5,17 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Listing;
 
+
+// ----------------------------------------------------------------
+//Common Resource Routes::
+//Index - Show all listings
+// show - Show single listing
+// create - show form to create new listing
+// store - Store new listing
+// edit - Show form to edit listing 
+// update - update listing
+// destroy - Delete listing
+
 //all Listing models
 Route::get('/',[ListingController::class, 'index']);
 
@@ -54,12 +65,3 @@ Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
 
 
-// ----------------------------------------------------------------
-//Common Resource Routes::
-//Index - Show all listings
-// show - Show single listing
-// create - show form to create new listing
-// store - Store new listing
-// edit - Show form to edit listing 
-// update - update listing
-// destroy - Delete listing
