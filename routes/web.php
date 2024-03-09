@@ -1,33 +1,39 @@
 <?php
 
+use App\Http\Controllers\ListingController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Listing;
 
 //all Listing models
-Route::get('/', function () {
-    return view('listings', [
-        'heading' => 'Latest Listing',
-        'listings' => Listing::all(),
-    ]);
-});
+Route::get('/',[ListingController::class, 'index']);
+
+// Route::get('/', function () {
+//     return view('listings', [
+//         'listings' => Listing::all(),
+//     ]);
+// });
+
 
 // Single Listing model
-Route::get('/listings/{listing}', function(Listing $listing) {
-    return view('listing', [
-        'listing' => $listing
-    ]);
+Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
-    // $listing = Listing::find($id);
+// Route::get('/listings/{listing}', function(Listing $listing) {
+//     return view('listing', [
+//         'listing' => $listing
+//     ]);
 
-    // if ($listing) {
-    //     return view('listing', [
-    //         'listing' => $listing
-    //     ]);
-    // } else {
-    //     abort(404);
-    // }
-});
+//     // $listing = Listing::find($id);
+
+//     // if ($listing) {
+//     //     return view('listing', [
+//     //         'listing' => $listing
+//     //     ]);
+//     // } else {
+//     //     abort(404);
+//     // }
+// });
+
 
 // Route::get('/', function () {
 //     return view('listings');
@@ -45,3 +51,15 @@ Route::get('/listings/{listing}', function(Listing $listing) {
 // Route::get('/search', function (Request $request) {
 //    return $request->name .' ' . $request->city . ' ' . $request->post;
 // });
+
+
+
+// ----------------------------------------------------------------
+//Common Resource Routes::
+//Index - Show all listings
+// show - Show single listing
+// create - show form to create new listing
+// store - Store new listing
+// edit - Show form to edit listing 
+// update - update listing
+// destroy - Delete listing
