@@ -12,9 +12,9 @@
             <div class="mb-6">
                 <label for="company" class="inline-block text-lg mb-2">Company Name</label>
                 <input type="text" class="border border-gray-200 rounded p-2 w-full" name="company" />
-            
+
                 @error('company')
-                  <p class="text-xs text-red-500 mt-1">{{$message}}</p>  
+                    <p class="text-xs text-red-500 mt-1">{{ $message }}</p>
                 @enderror
             </div>
 
@@ -22,10 +22,10 @@
                 <label for="title" class="inline-block text-lg mb-2">Job Title</label>
                 <input type="text" class="border border-gray-200 rounded p-2 w-full" name="title"
                     placeholder="Example: Senior Laravel Developer" />
-                
-                    @error('title')
-                    <p class="text-xs text-red-500 mt-1">{{$message}}</p>  
-                  @enderror
+
+                @error('title')
+                    <p class="text-xs text-red-500 mt-1">{{ $message }}</p>
+                @enderror
             </div>
 
             <div class="mb-6">
@@ -34,17 +34,17 @@
                     placeholder="Example: Remote, Boston MA, etc" />
 
 
-                    @error('location')
-                  <p class="text-xs text-red-500 mt-1">{{$message}}</p>  
+                @error('location')
+                    <p class="text-xs text-red-500 mt-1">{{ $message }}</p>
                 @enderror
             </div>
 
             <div class="mb-6">
                 <label for="email" class="inline-block text-lg mb-2">Contact Email</label>
                 <input type="text" class="border border-gray-200 rounded p-2 w-full" name="email" />
-           
+
                 @error('email')
-                  <p class="text-xs text-red-500 mt-1">{{$message}}</p>  
+                    <p class="text-xs text-red-500 mt-1">{{ $message }}</p>
                 @enderror
             </div>
 
@@ -53,10 +53,10 @@
                     Website/Application URL
                 </label>
                 <input type="text" class="border border-gray-200 rounded p-2 w-full" name="website" />
-            
-                @error('company')
-                <p class="text-xs text-red-500 mt-1">{{$message}}</p>  
-              @enderror
+
+                @error('website')
+                    <p class="text-xs text-red-500 mt-1">{{ $message }}</p>
+                @enderror
             </div>
 
             <div class="mb-6">
@@ -65,6 +65,10 @@
                 </label>
                 <input autocomplete type="text" class="border border-gray-200 rounded p-2 w-full" name="tags"
                     placeholder="Example: Laravel, Backend, Postgres, etc" />
+
+                @error('tags')
+                    <p class="text-xs text-red-500 mt-1">{{ $message }}</p>
+                @enderror
             </div>
 
             {{-- <div class="mb-6">
@@ -80,6 +84,10 @@
                 </label>
                 <textarea class="border border-gray-200 rounded p-2 w-full" name="description" rows="10"
                     placeholder="Include tasks, requirements, salary, etc"></textarea>
+
+                @error('description')
+                    <p class="text-xs text-red-500 mt-1">{{ $message }}</p>
+                @enderror
             </div>
 
             <div class="mb-6">
