@@ -9,6 +9,8 @@ class Listing extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['title', 'company','location','website', 'email', 'description'];
+
     public function scopeFilter($query, array $filters)
     {
         if ($filters['tag'] ?? false) {
