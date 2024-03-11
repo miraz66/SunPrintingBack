@@ -31,6 +31,9 @@ Route::get('/listings/create',[ListingController::class, 'create']);
 // Store Listings in database
 Route::post('/listings', [ListingController::class, 'store']); 
 
+//Show Edit From Listings
+Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']); 
+
 // Single Listing model
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
