@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\ListingController;
+use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Models\Listing;
-
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ListingController;
 
 // ----------------------------------------------------------------
 //Common Resource Routes::
@@ -12,12 +12,12 @@ use App\Models\Listing;
 // show - Show single listing
 // create - show form to create new listing
 // store - Store new listing
-// edit - Show form to edit listing 
+// edit - Show form to edit listing
 // update - update listing
 // destroy - Delete listing
 
 //all Listing models
-Route::get('/',[ListingController::class, 'index']);
+Route::get('/', [ListingController::class, 'index']);
 
 // Route::get('/', function () {
 //     return view('listings', [
@@ -26,19 +26,19 @@ Route::get('/',[ListingController::class, 'index']);
 // });
 
 //Show create from
-Route::get('/listings/create',[ListingController::class, 'create']);
+Route::get('/listings/create', [ListingController::class, 'create']);
 
 // Store Listings in database
-Route::post('/listings', [ListingController::class, 'store']); 
+Route::post('/listings', [ListingController::class, 'store']);
 
 //Show Edit From Listings
-Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']); 
+Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
 
 //Edit Submissions from Listings
-Route::put('/listings/{listing}', [ListingController::class, 'update']); 
+Route::put('/listings/{listing}', [ListingController::class, 'update']);
 
 //Delete Listings
-Route::delete('/listings/{listing}', [ListingController::class, 'destroy']); 
+Route::delete('/listings/{listing}', [ListingController::class, 'destroy']);
 
 // Single Listing model
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
@@ -59,7 +59,6 @@ Route::get('/listings/{listing}', [ListingController::class, 'show']);
 //     // }
 // });
 
-
 // Route::get('/', function () {
 //     return view('listings');
 // });
@@ -77,5 +76,11 @@ Route::get('/listings/{listing}', [ListingController::class, 'show']);
 //    return $request->name .' ' . $request->city . ' ' . $request->post;
 // });
 
+//Show register / create form
+Route::get('/register', [UserController::class, 'create']);
 
+//Create New User
+Route::post('/users', [UserController::class, 'store']);
 
+//Show Login / create form
+Route::get('/login', [UserController::class, 'login']);
