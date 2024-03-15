@@ -58,10 +58,10 @@
         </ul>
     </nav>
 
-    <!-- Hero -->
+    <!-- HERO -->
     @include('partials._hero')
 
-    <!-- Search -->
+    <!-- SEARCH -->
     @include('partials._search')
 
     {{-- VIEW OUTPUT --}}
@@ -70,12 +70,11 @@
         {{ $slot }}
     </main>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     @include('partials._footer')
 
-    <!-- Falsh Messages -->
+    <!-- FLASH MESSAGE -->
     <x-flash-message />
 
 </body>
-
 </html>
